@@ -15,11 +15,11 @@
     <string name="title_activity_blank">BlankActivity</string>
 
 	<string name="title_activity_main">MainActivity</string>
-    <string name="title_home">��ҳ</string>
-    <string name="title_dashboard">�ͻ���ѡ</string>
-    <string name="title_notifications">�ҵ�</string>
-    <string name="title_timing">�ͻ���̬</string>
+    <string name="title_home">首页</string>
+    <string name="title_dashboard">客户精选</string>
+    <string name="title_notifications">客户动态</string>
+    <string name="title_timing">我的</string>
 
-    <string name="txt_name">������</string>
+    <string name="txt_name">风清扬</string>
     <string name="todo">TODO</string>
 </resources>
