@@ -1,22 +1,13 @@
 package com.ivantee.smartsell;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.content.Intent;
 import android.graphics.Color;
-import android.net.Uri;
 import android.os.Bundle;
-import androidx.annotation.NonNull;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
-
-import androidx.fragment.app.Fragment;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentPagerAdapter;
-import androidx.viewpager.widget.ViewPager;
-
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.github.mikephil.charting.animation.Easing;
 import com.github.mikephil.charting.charts.PieChart;
@@ -27,139 +18,76 @@ import com.github.mikephil.charting.data.PieEntry;
 import com.github.mikephil.charting.formatter.PercentFormatter;
 import com.github.mikephil.charting.utils.ColorTemplate;
 import com.github.mikephil.charting.utils.MPPointF;
-import com.google.android.material.tabs.TabLayout;
-import com.ivantee.smartsell.dummy.DummyContent;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class CustomerHandPickActivity extends AppCompatActivity implements CustomerItemFragment.OnListFragmentInteractionListener {
-    Intent intent = null;
-    private PieChart mChart;
-    private ArrayList<PieEntry> entries = new ArrayList<PieEntry>();
+public class CustomerReport extends AppCompatActivity {
 
-    TabLayout mytab;
-    ViewPager mViewPager;
-    List<String> mTitle;
-    List<Fragment> mFragment;
+
+    private PieChart sexChart;
+    private PieChart cityChart;
+    private PieChart ageChart;
+    private PieChart zcChart;
+    private ArrayList<PieEntry> entries = new ArrayList<PieEntry>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_customer_hand_pick);
+        setContentView(R.layout.activity_customer_report);
 
-        intent = new Intent();
-        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
-        navigation.setSelectedItemId(R.id.navigation_customer);
-        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+        sexChart = findViewById(R.id.sexChart);
+        entries.clear();
+        entries.add(new PieEntry(40));
+        entries.add(new PieEntry(60));
+        setData(sexChart,entries);
 
-        mChart = findViewById(R.id.pieChart);
-        setData();
+        cityChart = findViewById(R.id.cityChart);
+        entries.clear();
+        entries.add(new PieEntry(10));
+        entries.add(new PieEntry(20));
+        entries.add(new PieEntry(35));
+        entries.add(new PieEntry(35));
+        setData(cityChart,entries);
 
-        mytab = (TabLayout) findViewById(R.id.mytab);
-        mViewPager = (ViewPager) findViewById(R.id.mViewPager);
-        mTitle = new ArrayList<>();
-        mTitle.add("高潜客户");
-        mTitle.add("所有客户");
-        mFragment = new ArrayList<>();
+        ageChart = findViewById(R.id.ageChart);
+        entries.clear();
+        entries.add(new PieEntry(30));
+        entries.add(new PieEntry(70));
+        setData(ageChart,entries);
 
-        mFragment.add(new CustomerItemFragment());
-        mFragment.add(new CustomerItemFragment());
+        zcChart = findViewById(R.id.zcChart);
+        entries.clear();
+        entries.add(new PieEntry(10));
+        entries.add(new PieEntry(20));
+        entries.add(new PieEntry(35));
+        entries.add(new PieEntry(35));
+        setData(zcChart,entries);
 
-        mViewPager.setAdapter(new FragmentPagerAdapter(getSupportFragmentManager()) {
-            @Override
-            public Fragment getItem(int position) {
-                CustomerItemFragment fragment = new CustomerItemFragment();
-                Bundle bundle = new Bundle();
-                if (position==0){
-                    bundle.putString("type","1");
-                } else{
-                    bundle.putString("type","2");
-                }
-                fragment.setArguments(bundle);
-                return fragment;
-            }
-
-            @Override
-            public int getCount() {
-                return mFragment.size();
-            }
-
-            @Override
-            public CharSequence getPageTitle(int position) {
-                return mTitle.get(position);
-            }
-        });
-
-        mytab.setupWithViewPager(mViewPager);
-
-        TextView showReport = (TextView) findViewById(R.id.showReport);
+        ImageView showReport = (ImageView) findViewById(R.id.returnBack);
         showReport.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                intent.setClass(CustomerHandPickActivity.this, CustomerReport.class);
+                Intent intent = new Intent();
+                intent.setClass(CustomerReport.this, CustomerHandPickActivity.class);
                 startActivity(intent);
             }
         });
-        ImageView addCus = (ImageView) findViewById(R.id.addCustomer1);
-        addCus.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                intent.setClass(CustomerHandPickActivity.this, AddCustomer.class);
-                startActivity(intent);
-            }
-        });
-
     }
 
-    @Override
-    public void onListFragmentInteraction(DummyContent.DummyItem item) {
-        Toast.makeText(this,"test",Toast.LENGTH_LONG).show();
-    }
-
-    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
-            = new BottomNavigationView.OnNavigationItemSelectedListener() {
-
-        @Override
-        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-            switch (item.getItemId()) {
-                case R.id.navigation_home:
-                    intent.setClass(CustomerHandPickActivity.this, CustomerInfoActivity.class);
-                    startActivity(intent);
-                    return true;
-                case R.id.navigation_customer:
-
-                    return true;
-                case R.id.navigation_dynamic:
-
-                    return true;
-                case R.id.navigation_mine:
-
-                    return true;
-            }
-
-            return false;
-        }
-    };
-
-    private void setData() {
-
-        entries.clear();
-        entries.add(new PieEntry(30,"低潜力"));
-        entries.add(new PieEntry(25, "高潜力"));
-        entries.add(new PieEntry(45,"中潜力"));
+    private void setData(PieChart mChart, List<PieEntry> entries) {
 
         mChart.setUsePercentValues(true); //设置是否显示数据实体(百分比，true:以下属性才有意义)
         mChart.getDescription().setEnabled(false);
         mChart.setExtraOffsets(5, 5, 5, 5);//饼形图上下左右边距
 
         mChart.setDragDecelerationFrictionCoef(0.95f);//设置pieChart图表转动阻力摩擦系数[0,1]
-        mChart.setContentDescription("客户潜力分布-雪豹分");
+        //mChart.setContentDescription("客户潜力分布-雪豹分");
 
         //mChart.setCenterTextTypeface(mTfLight);//设置所有DataSet内数据实体（百分比）的文本字体样式
-       // mChart.setCenterText("客户潜力分布-雪豹分");//设置PieChart内部圆文字的内容
+        // mChart.setCenterText("客户潜力分布-雪豹分");//设置PieChart内部圆文字的内容
 
-        mChart.setDrawHoleEnabled(true);//是否显示PieChart内部圆环(true:下面属性才有意义)
+        mChart.setDrawHoleEnabled(false);//是否显示PieChart内部圆环(true:下面属性才有意义)
         mChart.setHoleColor(Color.WHITE);//设置PieChart内部圆的颜色
 
         mChart.setTransparentCircleColor(Color.WHITE);//设置PieChart内部透明圆与内部圆间距(31f-28f)填充颜色
@@ -222,7 +150,7 @@ public class CustomerHandPickActivity extends AppCompatActivity implements Custo
 
         colors.add(ColorTemplate.getHoloBlue());
 
-        //dataSet.setColors(colors);
+        dataSet.setColors(colors);
         //dataSet.setSelectionShift(0f);
 
         PieData data = new PieData(dataSet);

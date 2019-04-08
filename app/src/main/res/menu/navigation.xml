@@ -9,16 +9,16 @@
     <item
         android:id="@+id/navigation_customer"
         android:icon="@drawable/ic_dashboard_black_24dp"
-        android:title="@string/title_dashboard" />
+        android:title="@string/title_customerHandPick" />
 
     <item
         android:id="@+id/navigation_dynamic"
         android:icon="@drawable/ic_remove_red_eye_black_24dp"
-        android:title="@string/title_timing" />
+        android:title="@string/title_customer" />
 
     <item
         android:id="@+id/navigation_mine"
         android:icon="@drawable/ic_subject_black_24dp"
-        android:title="@string/title_notifications" />
+        android:title="@string/title_mine" />
 
 </menu>
