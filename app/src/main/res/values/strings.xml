@@ -23,4 +23,7 @@
     <string name="txt_name">风清扬</string>
     <string name="todo">TODO</string>
     <string name="title_activity_add_customer">AddCustomer</string>
+
+
+    <string name="app_upgrade_tip_title">Release Notes (%1$s)</string>
 </resources>

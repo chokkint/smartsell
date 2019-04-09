@@ -2,7 +2,6 @@ package com.ivantee.smartsell;
 
 import android.content.Intent;
 import android.graphics.Color;
-import android.net.Uri;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -28,7 +27,7 @@ import com.github.mikephil.charting.formatter.PercentFormatter;
 import com.github.mikephil.charting.utils.ColorTemplate;
 import com.github.mikephil.charting.utils.MPPointF;
 import com.google.android.material.tabs.TabLayout;
-import com.ivantee.smartsell.dummy.DummyContent;
+import com.ivantee.smartsell.model.DummyContent;
 
 import java.util.ArrayList;
 import java.util.List;

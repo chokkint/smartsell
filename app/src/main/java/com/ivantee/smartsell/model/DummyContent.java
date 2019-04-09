@@ -1,4 +1,4 @@
-package com.ivantee.smartsell.dummy;
+package com.ivantee.smartsell.model;
 
 import java.util.ArrayList;
 import java.util.HashMap;

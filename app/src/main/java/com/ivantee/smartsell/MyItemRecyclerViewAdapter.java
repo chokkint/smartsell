@@ -9,7 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.ivantee.smartsell.CustomerItemFragment.OnListFragmentInteractionListener;
-import com.ivantee.smartsell.dummy.DummyContent.DummyItem;
+import com.ivantee.smartsell.model.DummyContent.DummyItem;
 
 import java.util.List;
 
