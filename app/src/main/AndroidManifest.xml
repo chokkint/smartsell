@@ -13,9 +13,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".LoginBeforeActivity"></activity>
         <activity
             android:name=".AddCustomer"
-            android:label="@string/title_activity_add_customer" android:theme="@style/DefaultCityPickerTheme"></activity>
+            android:label="@string/title_activity_add_customer"
+            android:theme="@style/DefaultCityPickerTheme" />
         <activity android:name=".CustomerReport" />
         <activity
             android:name=".LoginActivity"
