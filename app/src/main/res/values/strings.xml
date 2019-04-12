@@ -26,4 +26,5 @@
 
 
     <string name="app_upgrade_tip_title">Release Notes (%1$s)</string>
+    <string name="title_activity_login">Sign in</string>
 </resources>

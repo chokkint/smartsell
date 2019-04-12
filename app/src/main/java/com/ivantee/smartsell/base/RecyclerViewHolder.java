@@ -28,8 +28,8 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 
 /**
- * @author cginechen
- * @date 2016-10-19
+ * @author chokkint
+ * @date 2019-04-10
  */
 
 public class RecyclerViewHolder extends RecyclerView.ViewHolder {

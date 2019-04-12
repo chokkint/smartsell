@@ -27,8 +27,8 @@ import java.util.List;
 import androidx.recyclerview.widget.RecyclerView;
 
 /**
- * @author cginechen
- * @date 2016-10-19
+ * @author chokkint
+ * @date 2019-04-10
  */
 
 public abstract class BaseRecyclerAdapter<T> extends RecyclerView.Adapter<RecyclerViewHolder> {
