@@ -29,7 +29,7 @@
 
     <color name="app_color_description">@color/qmui_config_color_gray_5</color>
 
-    <color name="bar_divider">#000</color>
+    <color name="bar_divider">#000000</color>
     <color name="tab_panel_bg">#000</color>
     <color name="tab_panel_divider">@color/bar_divider</color>
 
