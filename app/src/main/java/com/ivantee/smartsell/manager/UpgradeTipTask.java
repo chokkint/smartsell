@@ -18,7 +18,6 @@ package com.ivantee.smartsell.manager;
 
 import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
 import android.text.SpannableStringBuilder;
 import android.text.Spanned;
 import android.view.View;
@@ -30,6 +29,7 @@ import com.qmuiteam.qmui.util.QMUIDisplayHelper;
 import com.qmuiteam.qmui.util.QMUIPackageHelper;
 import com.qmuiteam.qmui.widget.dialog.QMUIDialog;
 
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
 public class UpgradeTipTask implements UpgradeTask {

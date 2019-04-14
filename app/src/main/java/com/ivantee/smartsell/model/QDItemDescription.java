@@ -19,8 +19,8 @@ package com.ivantee.smartsell.model;
 import com.ivantee.smartsell.base.BaseFragment;
 
 /**
- * @author chokkint
- * @date 2019-04-10
+ * @author cginechen
+ * @date 2016-10-21
  */
 
 public class QDItemDescription {

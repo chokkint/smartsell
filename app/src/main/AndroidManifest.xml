@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.ivantee.smartsell">
-
     <!-- To auto-complete the email text field in the login form with the user's emails -->
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.READ_PROFILE" />
@@ -14,10 +13,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity
-            android:name=".LoginActivity"
-            android:label="@string/title_activity_login"></activity>
-        <activity android:name=".welcome.WelcomeActivity">
+        <activity android:name=".chest.ChestMainActivity"></activity>
+        <activity android:name=".customer.CustomerCompassActivity" />
+        <activity android:name=".HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -25,15 +23,19 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".AddCustomer"
+            android:name=".login.LoginActivity"
+            android:label="@string/title_activity_login" />
+        <activity android:name=".welcome.WelcomeActivity" />
+        <activity
+            android:name=".customer.AddCustomer"
             android:label="@string/title_activity_add_customer"
             android:theme="@style/DefaultCityPickerTheme" />
-        <activity android:name=".CustomerReport" />
+        <activity android:name=".customer.CustomerReport" />
         <activity
             android:name=".BlankActivity"
             android:label="@string/title_activity_blank" />
-        <activity android:name=".CustomerHandPickActivity"></activity>
-        <activity android:name=".CustomerInfoActivity" />
+        <activity android:name=".customer.CustomerHandPickActivity" />
+        <activity android:name=".customer.CustomerInfoActivity" />
         <activity android:name=".welcome.MainActivity" />
         <activity android:name=".welcome.WelcomeGuideActivity" />
     </application>

@@ -19,6 +19,7 @@ package com.ivantee.smartsell.manager;
 import android.app.Activity;
 import android.content.Context;
 
+
 /**
  * Created by cgspine on 2018/1/14.
  */

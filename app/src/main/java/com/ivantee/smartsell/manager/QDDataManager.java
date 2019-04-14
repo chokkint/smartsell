@@ -25,8 +25,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @author chokkint
- * @date 2019-04-10
+ * @author cginechen
+ * @date 2016-10-21
  */
 
 public class QDDataManager {
