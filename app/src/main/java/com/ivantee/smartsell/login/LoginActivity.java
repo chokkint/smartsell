@@ -3,6 +3,7 @@ package com.ivantee.smartsell.login;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 
 import androidx.annotation.NonNull;
@@ -34,6 +35,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.ivantee.smartsell.R;
+import com.ivantee.smartsell.customer.CustomerInfoActivity;
+import com.ivantee.smartsell.util.SharedPreferencesUtil;
+import com.ivantee.smartsell.welcome.WelcomeActivity;
+import com.ivantee.smartsell.welcome.WelcomeGuideActivity;
 
 import static android.Manifest.permission.READ_CONTACTS;
 
@@ -64,11 +69,24 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
     private EditText mPasswordView;
     private View mProgressView;
     private View mLoginFormView;
-
+    private TextView mRegisterUser;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        // test
+        mRegisterUser = (TextView)findViewById(R.id.add_user);
+        mRegisterUser.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                enterRegisterUserActivity();
+                return;
+            }
+        });
+
+
+
         // Set up the login form.
         mEmailView = (AutoCompleteTextView) findViewById(R.id.email);
         populateAutoComplete();
@@ -89,12 +107,23 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
         mEmailSignInButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
-                attemptLogin();
+                //TODO will be modify
+                //attemptLogin();
+                Intent intent = new Intent(LoginActivity.this, CustomerInfoActivity.class);
+                startActivity(intent);
+                finish();
             }
         });
 
         mLoginFormView = findViewById(R.id.login_form);
         mProgressView = findViewById(R.id.login_progress);
+
+    }
+
+    private void enterRegisterUserActivity(){
+        Intent intent = new Intent(LoginActivity.this, AddUser.class);
+        startActivity(intent);
+        finish();
     }
 
     private void populateAutoComplete() {
