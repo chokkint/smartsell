@@ -23,7 +23,8 @@
     <ScrollView
         android:id="@+id/login_form"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_marginTop="30dp">
 
         <LinearLayout
             android:id="@+id/email_login_form"
@@ -60,6 +61,93 @@
                 android:layout_marginTop="16dp"
                 android:text="@string/action_sign_in"
                 android:textStyle="bold" />
+
+            <com.qmuiteam.qmui.layout.QMUILinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="8dp">
+                <!--忘记密码-->
+                <TextView
+                    android:id="@+id/forget_password"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="10px"
+                    android:gravity="center"
+                    android:text="忘记密码?"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <!--新用户注册-->
+                <TextView
+                    android:id="@+id/add_user"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="10px"
+                    android:gravity="center"
+                    android:text="新用户注册"
+                    android:textSize="15sp" />
+            </com.qmuiteam.qmui.layout.QMUILinearLayout>
+
+            <com.qmuiteam.qmui.layout.QMUILinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50px"
+                android:gravity="center">
+
+                <View
+                    android:layout_width="0px"
+                    android:layout_height="2px"
+                    android:layout_weight="1"
+                    android:background="#22000000"
+                    android:gravity="center" />
+
+                <TextView
+                    android:layout_width="0px"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:gravity="center"
+                    android:text="一键登录"
+                    android:textColor="#77000000" />
+
+                <View
+                    android:layout_width="0px"
+                    android:layout_height="2px"
+                    android:layout_weight="1"
+                    android:background="#22000000" />
+            </com.qmuiteam.qmui.layout.QMUILinearLayout>
+
+            <com.qmuiteam.qmui.layout.QMUILinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30px"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/weixin_btn"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_marginRight="100px"
+                    android:src="@drawable/weixin" />
+
+                <ImageView
+                    android:id="@+id/qq_btn"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginRight="100px"
+                    android:src="@drawable/qq" />
+
+                <ImageView
+                    android:id="@+id/weibo_btn"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/weibo" />
+            </com.qmuiteam.qmui.layout.QMUILinearLayout>
+
 
         </LinearLayout>
     </ScrollView>

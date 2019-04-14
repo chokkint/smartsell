@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.ivantee.smartsell">
+
     <!-- To auto-complete the email text field in the login form with the user's emails -->
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.READ_PROFILE" />
@@ -16,6 +17,11 @@
         <activity android:name=".chest.ChestMainActivity"></activity>
         <activity android:name=".customer.CustomerCompassActivity" />
         <activity android:name=".HomeActivity">
+        <activity android:name=".login.AddUser"></activity>
+        <activity
+            android:name=".LoginActivity"
+            android:label="@string/title_activity_login" />
+        <activity android:name=".welcome.WelcomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -25,7 +31,7 @@
         <activity
             android:name=".login.LoginActivity"
             android:label="@string/title_activity_login" />
-        <activity android:name=".welcome.WelcomeActivity" />
+
         <activity
             android:name=".customer.AddCustomer"
             android:label="@string/title_activity_add_customer"
