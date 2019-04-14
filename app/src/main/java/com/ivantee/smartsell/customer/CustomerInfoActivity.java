@@ -4,6 +4,7 @@ import android.content.Intent;
 import androidx.annotation.NonNull;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.ivantee.smartsell.R;
+import com.ivantee.smartsell.chest.ChestMainActivity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
@@ -17,6 +18,9 @@ public class CustomerInfoActivity extends AppCompatActivity {
         setContentView(R.layout.activity_customer_info);
         intent = new Intent();
 
+        BottomNavigationView navigation = (BottomNavigationView)findViewById(R.id.navigation);
+        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+        navigation.setSelectedItemId(R.id.navigation_mine);
     }
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -32,7 +36,8 @@ public class CustomerInfoActivity extends AppCompatActivity {
                     startActivity(intent);
                     return true;
                 case R.id.navigation_dynamic:
-
+                    intent.setClass(CustomerInfoActivity.this, ChestMainActivity.class);
+                    startActivity(intent);
                     return true;
                 case R.id.navigation_mine:
 

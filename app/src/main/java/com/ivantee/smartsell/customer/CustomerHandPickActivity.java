@@ -28,6 +28,7 @@ import com.github.mikephil.charting.utils.ColorTemplate;
 import com.github.mikephil.charting.utils.MPPointF;
 import com.google.android.material.tabs.TabLayout;
 import com.ivantee.smartsell.R;
+import com.ivantee.smartsell.chest.ChestMainActivity;
 import com.ivantee.smartsell.model.DummyContent;
 
 import java.util.ArrayList;
@@ -108,6 +109,9 @@ public class CustomerHandPickActivity extends AppCompatActivity implements Custo
             }
         });
 
+        BottomNavigationView navigation = (BottomNavigationView)findViewById(R.id.navigation);
+        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+        navigation.setSelectedItemId(R.id.navigation_customer);
     }
 
     @Override
@@ -123,23 +127,25 @@ public class CustomerHandPickActivity extends AppCompatActivity implements Custo
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
                 case R.id.navigation_home:
-                    intent.setClass(CustomerHandPickActivity.this, CustomerInfoActivity.class);
-                    startActivity(intent);
+
                     return true;
                 case R.id.navigation_customer:
 
                     return true;
                 case R.id.navigation_dynamic:
-
+                    intent.setClass(CustomerHandPickActivity.this, ChestMainActivity.class);
+                    startActivity(intent);
                     return true;
                 case R.id.navigation_mine:
-
+                    intent.setClass(CustomerHandPickActivity.this, CustomerInfoActivity.class);
+                    startActivity(intent);
                     return true;
             }
 
             return false;
         }
     };
+
 
     private void setData() {
 
