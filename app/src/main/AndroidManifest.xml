@@ -16,10 +16,10 @@
         android:theme="@style/AppTheme">
         <activity android:name=".chest.ChestMainActivity"></activity>
         <activity android:name=".customer.CustomerCompassActivity" />
-        <activity android:name=".HomeActivity">
+        <activity android:name=".HomeActivity"></activity>
         <activity android:name=".login.AddUser"></activity>
         <activity
-            android:name=".LoginActivity"
+            android:name=".login.LoginActivity"
             android:label="@string/title_activity_login" />
         <activity android:name=".welcome.WelcomeActivity">
             <intent-filter>
@@ -28,9 +28,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".login.LoginActivity"
-            android:label="@string/title_activity_login" />
 
         <activity
             android:name=".customer.AddCustomer"
